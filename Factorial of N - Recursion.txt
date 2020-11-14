@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Main {
+    public static void main(String[] args) throws Exception{
+        new Main().Ans();
+    }
+    
+    static long Recursion(long N) throws Exception{
+        if(N==0){
+            return 1;
+        }
+        return (N*Recursion(N-1));
+        
+    }
+    
+    static void Ans() throws Exception{
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        long N = Long.parseLong(in.readLine());
+        long ans = 1;
+        ans = Recursion(N);
+        System.out.println(ans);
+        in.close();
+    }
+}
